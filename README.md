@@ -19,6 +19,7 @@ Note that you have to be in the same folder as the Dockerfile
 
 
 **Example:**
+
 `docker build -t watevs .`
 
 **Start the container from the image you created:**
@@ -26,6 +27,7 @@ Note that you have to be in the same folder as the Dockerfile
 `docker run [<options>] <image>`
 
 **Example:**
+
 `docker run -d -p 80:3000 watevs`
 
 ## List a few commands that will show information about memory, processes, CPU and mounted devices, which should work on the Dockerized Linux
@@ -37,6 +39,7 @@ There are a few ways to run commands on a Docker container that I know of:
 `docker run -it [<options>] <image> "/bin/sh"`
 
 **Example:**
+
 `docker run -it -p 80:3000 watevs "/bin/sh"`
 
 or
@@ -81,23 +84,27 @@ or
 
 `docker exec -it <id> free -m`
 
+
 **Processes:**
 
 `docker exec -it <id> ps aux`
+
 
 **CPU:**
 
 `docker exec -it <id> cat /proc/cpuinfo`
 
+
 **Mounted devices:**
 
 `docker exec -it <id> df -h`
 
+
 **Kill a process:** 
 
-This is done in two steps, so start by opening interactive mode (step 1 or 2 above).
+Start by opening interactive mode (step 1 or 2 above).
 
-First find the PID: 
+Find the PID: 
 
 `docker exec -it <id> ps aux`
 
@@ -108,7 +115,8 @@ Then kill the process:
 
 `docker run -d -v <path to a folder on the computer>:<path to a folder in the container> <image>`
 
-**Example:** `docker run -d -p 80:3000 -v //c/path/to/app:/app watevs`
+**Example:** 
+`docker run -d -p 80:3000 -v //c/path/to/app:/app watevs`
 
 Note you have to replace `//c/path/to/app` out for the path to the project.
 
