@@ -83,13 +83,15 @@ or
 `docker exec -it <id> df -h`
 
 **Kill a process:** 
+
 This is done in two steps, so start by opening interactive mode (step 1 or 2 above).
-First find the PID:
+First find the PID: 
 `docker exec -it <id> ps aux`
 Then kill the process:
 `docker exec -it <id> kill -9 <PID>`
 
 **Mount a folder (or hard drive/other-stuff) when the container is run:**
+
 `docker run -d -v <path to a folder on the computer>:<path to a folder in the container> <image>`
 **Example:** `docker run -d -p 80:3000 -v //c/path/to/app:/app watevs`
 Note you have to replace `//c/path/to/app` out for the path to the project.
