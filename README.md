@@ -12,7 +12,9 @@ CMD ["node", "src/index.js]
 ```
 
 **Build an image from Dockerfile:**
+
 `docker build -t <name> .`
+
 Note that you have to be in the same folder as the Dockerfile
 
 
